@@ -1,6 +1,9 @@
 var express = require('express');
+var cors = require('cors')
 var app = express();
 const { fetchByDates } = require('./api');
+
+app.use(cors())
 
 app.get('/api/earthquakes/query&starttime=:starttime&endtime=:endtime', async (req, res) => {
   const { starttime, endtime } = req.params;
