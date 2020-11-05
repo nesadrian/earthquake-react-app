@@ -19,6 +19,7 @@ const Sort = ({ sortOrder, sortOrderReverse }) => {
           <MenuItem value="mag">Magnitude</MenuItem>
           <MenuItem value="tsunami">Tsunami</MenuItem>
           <MenuItem value="radius">Radius</MenuItem>
+          <MenuItem value="time">Time</MenuItem>
         </Select>
       </FormControl>
       <ImportExport className={asc ? "sort_btn flipped" : "sort_btn"} onClick={handleBtnClick} />

@@ -3,7 +3,7 @@ import { LocationOn } from '@material-ui/icons'
 import './Card.css'
 
 const Card = ({ earthquake, toggleSelected }) => {
-  const { place, mag, tsunami, title } = earthquake.properties;
+  const { place, mag, tsunami, title, time } = earthquake.properties;
 
   if (!earthquake.selected) {
     return (
@@ -19,6 +19,14 @@ const Card = ({ earthquake, toggleSelected }) => {
       <div className="card_content">
         <p className="card_content_name">Location</p>
         {place}
+      </div>
+      <div className="card_content">
+        <p className="card_content_name">Date</p>
+        {new Date(time).toISOString().split('T')[0]}
+      </div>
+      <div className="card_content">
+        <p className="card_content_name">Time</p>
+        {new Date(time).toLocaleTimeString()}
       </div>
       <div className="card_content">
         <p className="card_content_name">Magnitude</p>
