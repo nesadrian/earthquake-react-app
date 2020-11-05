@@ -29,7 +29,7 @@ function App() {
     <div className="App">
       <main className="container">
         <List earthquakes={earthquakes} />
-        <HereMap />
+        <HereMap earthquakes={earthquakes} />
       </main>
     </div>
   );
