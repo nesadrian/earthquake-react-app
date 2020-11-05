@@ -17,7 +17,7 @@ app.get('/api/earthquakes/query&starttime=:starttime&endtime=:endtime', async (r
   }
   const data = {
     count: mockData.metadata.count,
-    earthquakes: mockData.features
+    earthquakes: mockData.features.map(earthquake => ({ ...earthquake, selected: false }))
   }
   // const apiData = await fetchByDates(starttime, endtime)
   // const data = {

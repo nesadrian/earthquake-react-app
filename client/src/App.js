@@ -7,7 +7,14 @@ import { dateToISO } from './helpers'
 
 function App() {
   const [earthquakes, setEarthquakes] = useState([]);
-  //console.log(process.env.REACT_APP_HERE_MAPS_API_KEY);
+
+  const toggleSelected = id => {
+    const newEarthquakes = earthquakes.map(earthquake => (earthquake.id === id
+      ? { ...earthquake, selected: !earthquake.selected }
+      : earthquake
+    ));
+    setEarthquakes(newEarthquakes);
+  }
 
   const getLatestEarthquakes = async () => {
     const now = dateToISO(new Date());
@@ -21,15 +28,16 @@ function App() {
   useEffect(() => {
     (async () => {
       const earthquakes = await getLatestEarthquakes();
+      console.log(earthquakes);
       setEarthquakes(earthquakes);
     })()
   }, [])
-
+  //<HereMap earthquakes={earthquakes} toggleSelected={toggleSelected}/>
   return (
     <div className="App">
       <main className="container">
-        <List earthquakes={earthquakes} />
-        <HereMap earthquakes={earthquakes} />
+        <List earthquakes={earthquakes} toggleSelected={toggleSelected} />
+
       </main>
     </div>
   );
