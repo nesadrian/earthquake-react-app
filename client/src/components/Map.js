@@ -1,4 +1,5 @@
 import React, { useLayoutEffect, useRef } from 'react'
+import './Map.css'
 
 const HereMap = () => {
   const mapRef = useRef(null);
@@ -25,7 +26,7 @@ const HereMap = () => {
     };
   }, [mapRef]);
 
-  return <div className="map" ref={mapRef} style={{ height: "500px" }} />;
+  return <div className="map" ref={mapRef} />;
 };
 
 export default HereMap;

@@ -1,14 +1,15 @@
 import React from 'react'
+import './Card.css'
 
 const Card = ({ earthquake }) => {
   const { place, mag, tsunami } = earthquake.properties;
 
   return (
-    <div>
-      <p>Location: {place}</p>
-      <p>Magnitude: {mag}</p>
-      <p>Tsunami: {tsunami}</p>
-    </div>
+    <article className="card">
+      <p className="card_text">Location: {place}</p>
+      <p className="card_text">Magnitude: {mag}</p>
+      <p className="card_text">Tsunami: {tsunami}</p>
+    </article>
   )
 }
 
