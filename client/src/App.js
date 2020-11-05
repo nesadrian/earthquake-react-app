@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import List from './components/List'
+import HereMap from './components/Map'
 import './App.css';
 import { fetchByDates } from './api'
 import { dateToISO } from './helpers'
@@ -26,7 +27,10 @@ function App() {
 
   return (
     <div className="App">
-      <List earthquakes={earthquakes} />
+      <main className="container">
+        <List earthquakes={earthquakes} />
+        <HereMap />
+      </main>
     </div>
   );
 }
