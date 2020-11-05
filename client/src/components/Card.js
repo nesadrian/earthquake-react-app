@@ -1,9 +1,11 @@
 import React from 'react'
 
 const Card = ({ earthquake }) => {
+  const { mag } = earthquake.properties;
+
   return (
     <div>
-      {earthquake.type}
+      <p>Magnitude: {mag}</p>
     </div>
   )
 }

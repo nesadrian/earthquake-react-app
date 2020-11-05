@@ -4,7 +4,7 @@ import Card from './Card';
 const List = ({ earthquakes }) => {
   return (
     <div>
-      {earthquakes.map(earthquake => <Card earthquake={earthquake} />)}
+      {earthquakes.map(earthquake => <Card key={earthquake.id} earthquake={earthquake} />)}
     </div>
   )
 }
