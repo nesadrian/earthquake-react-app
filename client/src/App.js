@@ -28,16 +28,15 @@ function App() {
   useEffect(() => {
     (async () => {
       const earthquakes = await getLatestEarthquakes();
-      console.log(earthquakes);
       setEarthquakes(earthquakes);
     })()
   }, [])
-  //<HereMap earthquakes={earthquakes} toggleSelected={toggleSelected}/>
+
   return (
     <div className="App">
       <main className="container">
         <List earthquakes={earthquakes} toggleSelected={toggleSelected} />
-
+        <HereMap earthquakes={earthquakes} toggleSelected={toggleSelected} />
       </main>
     </div>
   );
