@@ -1,12 +1,46 @@
 .card {
   display: flex;
   flex-direction: column;
-  background-color: red;
-  margin-bottom: 10px;
-  padding: 10px;
+  padding: 20px;
+  border: 1px solid grey;
+  margin-bottom: -1px;
+  -moz-transition: all .1s ease-in;
+  -o-transition: all .1s ease-in;
+  -webkit-transition: all .1s ease-in;
+  transition: all .1s ease-in;
 }
 
-.card_text {
+.card--selected {
+  background-color: #B2DFDB;
+}
+
+.card:hover {
+  background-color: #B2DFDB;
+  cursor: pointer;
+}
+
+.card_title {
+  
+}
+
+.card_title--selected {
+  margin-bottom: 20px;
+}
+
+.card_content {
+  display: flex;
   font-size: 1rem;
   margin: 5px 0;
+}
+
+.card_content--location {
+  align-self: center;
+}
+
+.card_content_name {
+  width: 30%;
+}
+
+.card_content_value {
+
 }
