@@ -2,9 +2,14 @@ var express = require('express');
 var app = express();
 const { fetchByDates } = require('./api');
 
-app.get('/api/', async (req, res) => {
-  const data = await fetchByDates('2014-01-01', '2014-01-02')
-  res.send(data)
+app.get('/api/earthquakes/query&starttime=:starttime&endtime=:endtime', async (req, res) => {
+  const { starttime, endtime } = req.params;
+  const apiData = await fetchByDates(starttime, endtime)
+  const data = {
+    count: apiData.metadata.count,
+    earthquakes: apiData.features
+  }
+  res.send(data);
 });
 
 app.get('/', (req, res) => {
