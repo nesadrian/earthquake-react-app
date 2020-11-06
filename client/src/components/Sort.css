@@ -1,0 +1,38 @@
+.sort_val-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.sort-container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-color: #009688;
+  border: 1px solid grey;
+  margin-bottom: -1px;
+}
+
+.sort_dates-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sort {
+  width: 80%;
+  margin-top: -10px;
+}
+
+.select {
+  color: white;
+}
+
+.flipped {
+  transform: scaleX(-1);
+}
+
+.sort_btn:hover {
+  cursor: pointer;
+}
