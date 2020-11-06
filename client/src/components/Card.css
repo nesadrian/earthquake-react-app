@@ -11,11 +11,11 @@
 }
 
 .card--selected {
-  background-color: #B2DFDB;
+  background-color: #e0f2f1;
 }
 
 .card:hover {
-  background-color: #B2DFDB;
+  background-color: #e0f2f1;
   cursor: pointer;
 }
 

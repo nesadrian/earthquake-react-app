@@ -7,13 +7,13 @@ const Card = ({ earthquake, toggleSelected, map }) => {
   const { place, mag, tsunami, title, time } = earthquake.properties;
   const [lng, lat, rad] = earthquake.geometry.coordinates;
 
-  // useEffect(() => {
-  //   //map.dispose();
-  //   if (!map) return
-  //   const circle = getCircle(lat, lng, rad * 1000, earthquake.selected)
-  //   circle.addEventListener('tap', () => toggleSelected(earthquake.id))
-  //   map.addObject(circle)
-  // }, [map])
+  useEffect(() => {
+    //map.dispose();
+    if (!map) return
+    const circle = getCircle(lat, lng, rad * 1000, earthquake.selected)
+    circle.addEventListener('tap', () => toggleSelected(earthquake.id))
+    map.addObject(circle)
+  }, [map])
 
   if (!earthquake.selected) {
     return (
@@ -43,11 +43,15 @@ const Card = ({ earthquake, toggleSelected, map }) => {
         {mag}
       </div>
       <div className="card_content">
+        <p className="card_content_name">Radius</p>
+        {rad}km
+      </div>
+      <div className="card_content">
         <p className="card_content_name">Tsunami</p>
         {tsunami}
       </div>
       <div className="card_content card_content--location">
-        <LocationOn onClick={() => { if (map) moveMap(map, lat, lng, 5) }} />
+        <LocationOn onClick={() => { if (map) moveMap(map, lat, lng, 7) }} />
       </div>
     </article>
   )

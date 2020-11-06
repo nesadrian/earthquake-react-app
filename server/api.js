@@ -4,6 +4,7 @@ const baseUrl = ' https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojso
 
 const fetchByDates = async (startDate, endDate) => {
   const url = baseUrl + `&starttime=${startDate}&endtime=${endDate}`
+  console.log(url);
   return fetch(url).then(res => res.json())
 }
 

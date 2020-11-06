@@ -1,5 +1,14 @@
 const dateToISO = date => date.toISOString().split('T', 1)[0];
 
+const getDateNow = () => dateToISO(new Date());
+
+const getDateWeekAgo = () => {
+  let weekAgo = new Date()
+  weekAgo.setDate(weekAgo.getDate() - 7)
+  weekAgo = dateToISO(weekAgo);
+  return weekAgo
+}
+
 const getCircle = (lat, lng, rad, selected) =>
   new window.H.map.Circle(
     { lat, lng },
@@ -7,16 +16,14 @@ const getCircle = (lat, lng, rad, selected) =>
     selected ?
       {
         style: {
-          strokeColor: 'rgba(55, 85, 170, 0.6)',
-          lineWidth: 2,
-          fillColor: 'rgba(0, 0, 0, 0.7)'
+          lineWidth: 0,
+          fillColor: 'rgba(255, 167, 66, 0.7)'
         }
       } :
       {
         style: {
-          strokeColor: 'rgba(55, 85, 170, 0.6)',
-          lineWidth: 2,
-          fillColor: 'rgba(0, 128, 0, 0.7)'
+          lineWidth: 0,
+          fillColor: 'rgba(237, 132, 66, 0.7)'
         }
       }
   );
@@ -26,4 +33,4 @@ const moveMap = (map, lat, lng, zoom) => {
   map.setZoom(zoom);
 }
 
-export { dateToISO, getCircle, moveMap };
+export { dateToISO, getCircle, moveMap, getDateNow, getDateWeekAgo };
