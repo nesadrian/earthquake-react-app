@@ -15,7 +15,7 @@ const Sort = ({ sortOrder, sortOrderReverse }) => {
     <section className="sort-container">
       <FormControl className="sort">
         <InputLabel id="label">Sort</InputLabel>
-        <Select onChange={e => sortOrder(e.target.value, asc)} className="select" labelId="label" id="select">
+        <Select onChange={e => sortOrder(e.target.value, asc)} className="select" labelId="label" id="select" defaultValue="">
           <MenuItem value="mag">Magnitude</MenuItem>
           <MenuItem value="tsunami">Tsunami</MenuItem>
           <MenuItem value="radius">Radius</MenuItem>

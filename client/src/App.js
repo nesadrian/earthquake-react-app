@@ -8,6 +8,7 @@ import { dateToISO } from './helpers'
 
 function App() {
   const [earthquakes, setEarthquakes] = useState([]);
+  const [map, setMap] = useState(undefined)
   // Because list won't rerender based on earthquake state change
   const [test, setTest] = useState(undefined)
 
@@ -52,15 +53,15 @@ function App() {
       setEarthquakes(earthquakes);
     })()
   }, [])
-  //<HereMap earthquakes={earthquakes} toggleSelected={toggleSelected} />
 
   return (
     <div className="App">
       <main className="container">
         <section className="sidebar-container">
           <Sort sortOrder={sortOrder} sortOrderReverse={sortOrderReverse} />
-          <List s={test} earthquakes={earthquakes} toggleSelected={toggleSelected} />
+          <List s={test} earthquakes={earthquakes} toggleSelected={toggleSelected} map={map} />
         </section>
+        <HereMap earthquakes={earthquakes} toggleSelected={toggleSelected} setMap={setMap} />
       </main>
     </div>
   );
