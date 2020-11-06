@@ -54,6 +54,7 @@ function App() {
     })()
   }, [])
 
+  //<HereMap earthquakes={earthquakes} toggleSelected={toggleSelected} setMap={setMap} />
   return (
     <div className="App">
       <main className="container">
@@ -61,7 +62,6 @@ function App() {
           <Sort sortOrder={sortOrder} sortOrderReverse={sortOrderReverse} />
           <List s={test} earthquakes={earthquakes} toggleSelected={toggleSelected} map={map} />
         </section>
-        <HereMap earthquakes={earthquakes} toggleSelected={toggleSelected} setMap={setMap} />
       </main>
     </div>
   );

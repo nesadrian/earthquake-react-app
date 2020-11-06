@@ -9,6 +9,7 @@ const Card = ({ earthquake, toggleSelected, map }) => {
 
   useEffect(() => {
     //map.dispose();
+    if (!map) return
     const circle = getCircle(lat, lng, rad * 1000, earthquake.selected)
     circle.addEventListener('tap', () => toggleSelected(earthquake.id))
     map.addObject(circle)
@@ -46,7 +47,7 @@ const Card = ({ earthquake, toggleSelected, map }) => {
         {tsunami}
       </div>
       <div className="card_content card_content--location">
-        <LocationOn onClick={() => moveMap(map, lat, lng, 5)} />
+        <LocationOn onClick={() => { if (map) moveMap(map, lat, lng, 5) }} />
       </div>
     </article>
   )

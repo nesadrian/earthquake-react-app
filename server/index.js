@@ -11,7 +11,7 @@ app.get('/api/earthquakes/query&starttime=:starttime&endtime=:endtime', async (r
   const { starttime, endtime } = req.params;
   if (!mockData) {
     mockData = await fetchByDates(starttime, endtime)
-    mockData.features = mockData.features.slice(0, 10);
+    //mockData.features = mockData.features.slice(0, 10);
     console.log(mockData);
     console.log("FETCH BACKEND API");
   }
