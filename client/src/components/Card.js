@@ -8,7 +8,6 @@ const Card = ({ earthquake, toggleSelected, map }) => {
   const [lng, lat, rad] = earthquake.geometry.coordinates;
 
   useEffect(() => {
-    //map.dispose();
     if (!map) return
     const circle = getCircle(lat, lng, rad * 1000, earthquake.selected)
     circle.addEventListener('tap', () => toggleSelected(earthquake.id))
@@ -24,32 +23,34 @@ const Card = ({ earthquake, toggleSelected, map }) => {
   }
 
   return (
-    <article className="card card--selected" onClick={() => toggleSelected(earthquake.id)}>
-      <div className="card_text card_title card_title--selected">{title}</div>
-      <div className="card_content">
-        <p className="card_content_name">Location</p>
-        {place}
+    <article className="card card--selected">
+      <section onClick={() => toggleSelected(earthquake.id)}>
+        <div className="card_text card_title card_title--selected">{title}</div>
+        <div className="card_content">
+          <p className="card_content_name">Location</p>
+          {place}
+        </div>
+        <div className="card_content">
+          <p className="card_content_name">Date</p>
+          {new Date(time).toISOString().split('T')[0]}
+        </div>
+        <div className="card_content">
+          <p className="card_content_name">Time</p>
+          {new Date(time).toLocaleTimeString()}
+        </div>
+        <div className="card_content">
+          <p className="card_content_name">Magnitude</p>
+          {mag}
+        </div>
+        <div className="card_content">
+          <p className="card_content_name">Radius</p>
+          {rad}km
       </div>
-      <div className="card_content">
-        <p className="card_content_name">Date</p>
-        {new Date(time).toISOString().split('T')[0]}
-      </div>
-      <div className="card_content">
-        <p className="card_content_name">Time</p>
-        {new Date(time).toLocaleTimeString()}
-      </div>
-      <div className="card_content">
-        <p className="card_content_name">Magnitude</p>
-        {mag}
-      </div>
-      <div className="card_content">
-        <p className="card_content_name">Radius</p>
-        {rad}km
-      </div>
-      <div className="card_content">
-        <p className="card_content_name">Tsunami</p>
-        {tsunami}
-      </div>
+        <div className="card_content">
+          <p className="card_content_name">Tsunami</p>
+          {tsunami}
+        </div>
+      </section>
       <div className="card_content card_content--location">
         <LocationOn onClick={() => { if (map) moveMap(map, lat, lng, 7) }} />
       </div>

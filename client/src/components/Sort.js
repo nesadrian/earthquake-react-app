@@ -31,6 +31,7 @@ const Sort = ({ sortOrder, sortOrderReverse, setDate }) => {
           id="from"
           label="From"
           type="date"
+          className="sort_date"
           defaultValue={getDateWeekAgo()}
           onChange={e => setDate(e.target.value, true)}
           InputLabelProps={{
@@ -41,6 +42,7 @@ const Sort = ({ sortOrder, sortOrderReverse, setDate }) => {
           id="to"
           label="To"
           type="date"
+          className="sort_date"
           defaultValue={getDateNow()}
           onChange={e => setDate(e.target.value, false)}
           InputLabelProps={{

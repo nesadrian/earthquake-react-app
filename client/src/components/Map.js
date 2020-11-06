@@ -7,7 +7,7 @@ const HereMap = ({ setMap }) => {
   useLayoutEffect(() => {
     if (!mapRef.current) return;
     const platform = new window.H.service.Platform({
-      apikey: 'process.env.REACT_APP_HERE_MAPS_API_KEY'
+      apikey: process.env.REACT_APP_HERE_MAPS_API_KEY
     });
     const defaultLayers = platform.createDefaultLayers();
 

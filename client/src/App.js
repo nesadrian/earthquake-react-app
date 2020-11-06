@@ -42,22 +42,6 @@ function App() {
     setEarthquakes(newEarthquakes);
   }
 
-  // const getLatestEarthquakes = async () => {
-  //   const now = dateToISO(new Date());
-  //   let weekAgo = new Date()
-  //   weekAgo.setDate(weekAgo.getDate() - 7)
-  //   weekAgo = dateToISO(weekAgo);
-  //   const data = await fetchByDates(weekAgo, now);
-  //   return data.earthquakes;
-  // }
-
-  // useEffect(() => {
-  //   (async () => {
-  //     const earthquakes = await getLatestEarthquakes();
-  //     setEarthquakes(earthquakes);
-  //   })()
-  // }, [])
-
   useEffect(() => {
     setStartDate(getDateWeekAgo());
     setEndDate(getDateNow())
@@ -65,7 +49,6 @@ function App() {
 
   useEffect(() => {
     if (!startDate || !endDate) return
-    console.log(startDate, endDate);
     (async () => {
       const data = await fetchByDates(startDate, endDate);
       setEarthquakes(data.earthquakes);
