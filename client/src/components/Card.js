@@ -7,13 +7,13 @@ const Card = ({ earthquake, toggleSelected, map }) => {
   const { place, mag, tsunami, title, time } = earthquake.properties;
   const [lng, lat, rad] = earthquake.geometry.coordinates;
 
-  useEffect(() => {
-    //map.dispose();
-    if (!map) return
-    const circle = getCircle(lat, lng, rad * 1000, earthquake.selected)
-    circle.addEventListener('tap', () => toggleSelected(earthquake.id))
-    map.addObject(circle)
-  }, [map])
+  // useEffect(() => {
+  //   //map.dispose();
+  //   if (!map) return
+  //   const circle = getCircle(lat, lng, rad * 1000, earthquake.selected)
+  //   circle.addEventListener('tap', () => toggleSelected(earthquake.id))
+  //   map.addObject(circle)
+  // }, [map])
 
   if (!earthquake.selected) {
     return (

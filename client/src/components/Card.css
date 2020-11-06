@@ -38,9 +38,5 @@
 }
 
 .card_content_name {
-  width: 30%;
-}
-
-.card_content_value {
-
+  min-width: 85px;
 }
