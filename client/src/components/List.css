@@ -1,0 +1,10 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+}
+
+.button-container {
+  width: 100%
+}
+

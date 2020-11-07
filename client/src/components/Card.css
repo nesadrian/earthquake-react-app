@@ -1,0 +1,42 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border: 1px solid grey;
+  margin-bottom: -1px;
+  -moz-transition: all .1s ease-in;
+  -o-transition: all .1s ease-in;
+  -webkit-transition: all .1s ease-in;
+  transition: all .1s ease-in;
+}
+
+.card--selected {
+  background-color: #e0f2f1;
+}
+
+.card:hover {
+  background-color: #e0f2f1;
+  cursor: pointer;
+}
+
+.card_title {
+  
+}
+
+.card_title--selected {
+  margin-bottom: 20px;
+}
+
+.card_content {
+  display: flex;
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+.card_content--location {
+  align-self: center;
+}
+
+.card_content_name {
+  min-width: 85px;
+}
